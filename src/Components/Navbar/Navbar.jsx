@@ -6,7 +6,7 @@ import { CgMenuRightAlt } from "react-icons/cg";
 const Navbar = () => {
     return (
         <>
-            <nav className='container mx-auto py-4 flex items-center justify-between px-3   lg:px-0'>
+            <nav className='container mx-auto py-4 flex items-center justify-between px-3    lg:px-0'>
                 <Link to='/'  className='flex items-center '>
                     <img src={logo} alt="" className='w-9 md:w-12 ' />
                     <h1 className='text-2xl md:text-3xl font-bold'>Lancr<span className='text-primary'>.</span></h1>
