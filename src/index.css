@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  /* 🎯 Primary Brand Color */
+  --color-primary: #1F6F65;
+  /* Teal Blue - Modern & Trustworthy */
+  --color-primary-content: #FFFFFF;
+  /* Text on Primary */
+
+  /* ✨ Secondary Call-to-Action */
+  --color-secondary: #FFD166;
+  /* Warm Gold - Premium CTA */
+  --color-secondary-content: #1A1A1A;
+  /* Text on Secondary */
+
+  /* 🌟 Accent / Highlight */
+  --color-accent: #00E599;
+  /* Aqua Green - Vibrant Accent */
+  --color-accent-content: #1A1A1A;
+  /* Text on Accent */
+
+  /* 🌌 Neutral Base */
+  --color-neutral: #0B0F1A;
+  /* Deep Navy - Dark Background */
+  --color-neutral-content: #FFFFFF;
+  /* Text on Neutral */
+
+  /* 🧾 Base Backgrounds & Text */
+  --color-base-100: #FFFFFF;
+  /* Main Background */
+  --color-base-200: #F3F6FA;
+  /* Light Section Background */
+  --color-base-300: #D9E1EC;
+  /* Borders / Cards */
+  --color-base-content: #1F2937;
+  /* Default Text */
+
+  /* 📘 Info */
+  --color-info: #00AFFF;
+  /* Bright Cyan */
+  --color-info-content: #FFFFFF;
+
+  /* ✅ Success */
+  --color-success: #10B981;
+  /* Emerald Green */
+  --color-success-content: #FFFFFF;
+
+  /* ⚠️ Warning */
+  --color-warning: #FFB74D;
+  /* Soft Amber */
+  --color-warning-content: #1A1A1A;
+
+  /* ❌ Error */
+  --color-error: #EF4444;
+  /* Vibrant Red */
+  --color-error-content: #FFFFFF;
+}
+
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.active {
+  color: #1F6F65;
+  border-bottom: 2px solid #1F6F65;
+}
