@@ -6,6 +6,10 @@ import Footer from '../Components/Footer/Footer';
 
 
 const Layout = () => {
+
+    
+
+
     return (
         <>
             <header className='border-b border-base-300 '>
@@ -17,7 +21,7 @@ const Layout = () => {
 
             </main>
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
         </>
     );
