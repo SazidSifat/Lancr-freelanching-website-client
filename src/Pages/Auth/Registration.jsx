@@ -65,7 +65,7 @@ const Registration = () => {
         <div className='bg-base-200'>
             <div className=' p-8 flex items-center justify-center container mx-auto '>
 
-                <form onSubmit={handleRegister} className=' space-y-6 lg:w-[50%] bg-white px-6 lg:px-20 py-8 lg:py-10 rounded'>
+                <form onSubmit={handleRegister} className=' space-y-6 lg:w-[50%] shadow-2xl bg-white px-6 lg:px-20 py-8 lg:py-10 rounded'>
 
                     <div className='text-center'>  <p className='text-xl'>Welcome,</p>
                         <p className='text-3xl font-bold'>Create Your Account Now</p></div>

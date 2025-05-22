@@ -8,6 +8,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import BrowseTask from "../Pages/BrowseTask/BrowseTask";
 import Mytask from "../Pages/MyTask/Mytask";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
+import Loading from "../Components/Loading/Loading";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: HomePage
+                Component: HomePage,
+                loader: () => fetch('http://localhost:3000/feature-task')
             },
             {
                 path: '/add-task',
@@ -25,7 +27,8 @@ export const router = createBrowserRouter([
             {
                 path: '/browse-task',
                 element: <BrowseTask />,
-                loader: () => fetch("http://localhost:3000/all-task")
+                loader: () => fetch("http://localhost:3000/all-task"),
+                hydrateFallbackElement: <Loading />
             },
             {
                 path: '/my-task',
@@ -43,7 +46,7 @@ export const router = createBrowserRouter([
             {
                 path: '/task-details/:id',
                 loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
-                Component : TaskDetails
+                element: <PrivateRoute><TaskDetails /></PrivateRoute>
 
             }
 

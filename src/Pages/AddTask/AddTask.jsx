@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import Swal from 'sweetalert2';
+import { Fade } from 'react-awesome-reveal';
 
 const AddTask = () => {
 
@@ -19,7 +20,7 @@ const AddTask = () => {
         const formData = new FormData(form)
         const data = Object.fromEntries(formData.entries())
 
-        fetch("http://localhost:3000/addtask", {
+        fetch("https://freelance-task-marketplace-server-tau.vercel.app/addtask", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -39,13 +40,14 @@ const AddTask = () => {
     }
 
     return (
-        <div className='p-3 md:p-10 bg-base-200'>
+        <Fade>
+            <div className='p-3 md:p-10 bg-base-200'>
             <div className='container mx-auto space-y-4 md:space-y-10'>
                 <h1 className=' text-3xl md:text-4xl font-bold text-center'>
                     Add a Task<span className='text-primary'>.</span>
                 </h1>
 
-                <div className='flex items-center justify-center px-4 md:px-8 py-4 md:py-5 lg:py-10 bg-white rounded lg:w-9/12 mx-auto'>
+                <div className='flex shadow-2xl items-center justify-center px-4 md:px-8 py-4 md:py-5 lg:py-10 bg-white rounded lg:w-9/12 mx-auto'>
                     <form onSubmit={handleFormtask} className=' w-full space-y-6'>
 
 
@@ -110,6 +112,7 @@ const AddTask = () => {
                 </div>
             </div>
         </div>
+        </Fade>
     );
 };
 

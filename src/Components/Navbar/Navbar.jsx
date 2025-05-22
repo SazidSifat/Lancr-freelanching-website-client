@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const { user, signOutUser } = useContext(AuthContext)
 
-    console.log( user );
+    console.log(user);
 
     const handleSignOut = () => {
         signOutUser().then(() => {
@@ -54,11 +54,12 @@ const Navbar = () => {
                                     Register
                                 </button>
                             </Link>
-                            <div onClick={() => setToggle(!toggle)} className='md:hidden'>
-                                <CgMenuRightAlt size={36} />
-                            </div>
+
                         </div>
                     }
+                    <div onClick={() => setToggle(!toggle)} className='md:hidden'>
+                        <CgMenuRightAlt size={36} />
+                    </div>
                 </div>
 
                 <div className={`absolute sm:hidden z-50 bg-white h-[1500px] w-[65%] top-0 transition-all duration-500 ${toggle ? 'left-0' : '-left-[500px]'}`} >

@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-   
+
 
     const [eye, setEye] = useState(false)
 
@@ -65,7 +65,7 @@ const Login = () => {
         <div className="bg-base-200">
             <div className='  p-8  flex items-center justify-center container mx-auto '>
 
-                <form onSubmit={handleLogin} className=' space-y-6 lg:w-[50%] bg-white  px-6 py-8 lg:px-20 lg:py-20 rounded'>
+                <form onSubmit={handleLogin} className=' space-y-6 lg:w-[50%] bg-white  shadow-2xl px-6 py-8 lg:px-20 lg:py-20 rounded'>
 
                     <div className='text-center'>  <p className='lg:text-xl'>Welcome Back !</p>
                         <p className='text-3xl lg:text-4xl font-bold'>Login Now</p>
