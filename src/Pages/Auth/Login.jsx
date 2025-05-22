@@ -1,5 +1,3 @@
-
-// import { motion } from "motion/react"
 import * as motion from "motion/react-client"
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -14,8 +12,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    console.log(location);
-
+   
 
     const [eye, setEye] = useState(false)
 
@@ -26,17 +23,30 @@ const Login = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
 
+        console.log(data);
 
-        emailPassLogin(data.email, data.password).then(res=>{
-            console.log( res );
-        }).catch(err=>{
-            console.log( err );
-        })
+
+        if (data.email && data.password) {
+            emailPassLogin(data.email, data.password).then(() => {
+                location.state ? navigate(location.state) : navigate('/')
+
+            }).catch(err => {
+                if (err.code === "auth/invalid-credential") {
+                    toast.error("Invalid Credential.")
+                }
+            })
+        } else {
+            toast.error("All Field Require!")
+        }
     }
+
+
+
+
 
     const handleGoogleLogin = () => {
         signinWithGoogle()
-            .then((res => {
+            .then((() => {
                 location.state ? navigate(location.state) : navigate('/')
                 setLoading(false)
             }))

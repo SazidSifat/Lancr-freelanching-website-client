@@ -11,6 +11,8 @@ const Navbar = () => {
 
     const { user, signOutUser } = useContext(AuthContext)
 
+    console.log( user );
+
     const handleSignOut = () => {
         signOutUser().then(() => {
 
@@ -33,12 +35,16 @@ const Navbar = () => {
                         <NavLink className='p-1' to='/my-task'>My Task</NavLink>
                     </ul>
                     {
-                        user ? <div className='flex  items-center gap-3
-                         '>
-                            <img src={user.photoURL} alt="" className='w-11 rounded' />
-                            <button onClick={handleSignOut} to='/login' className='btn text-red-400 border border-red-400  hover:bg-[#15534c] hover:text-red-400 '>
-                                Logout
-                            </button>
+                        user ? <div className='  relative inline-block group '>
+                            <img src={user.photoURL} alt="" className='w-11 rounded cursor-pointer' />
+                            <div className="absolute  -translate-x-3/4 top-12 z-10 bg-base-300 text-white px-6 py-3 rounded whitespace-nowrap cursor-pointer select-none opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all flex items-center justify-center flex-col gap-3 ">
+                                <h1 className='text-black'>{user.displayName}</h1>
+                                <button onClick={handleSignOut} to='/login' className='btn text-red-400 w-full border border-red-400  hover:bg-red-400] hover:text-red-400 '>
+                                    Logout
+                                </button>
+
+                            </div>
+
                         </div> : <div className='space-x-3 flex items-center '>
                             <Link to='/login' className='btn text-primary border border-primary  hover:bg-[#15534c] hover:text-primary-content  '>
                                 Login
@@ -70,7 +76,7 @@ const Navbar = () => {
 
                             <NavLink onClick={() => setToggle(!toggle)} to='/add-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 border-t-0 w-full  border-b-1'>Add Task</NavLink>
 
-                            <NavLink onClick={() => setToggle(!toggle)}  to='/browse-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>Browse Task</NavLink>
+                            <NavLink onClick={() => setToggle(!toggle)} to='/browse-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>Browse Task</NavLink>
 
                             <NavLink onClick={() => setToggle(!toggle)} to='/my-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>My Task</NavLink>
                         </ul>

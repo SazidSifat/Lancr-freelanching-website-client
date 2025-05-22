@@ -7,11 +7,10 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthContext';
 
 const Registration = () => {
-    const { signinWithGoogle, setLoading, emailPassRegister } = useContext(AuthContext);
+
+    const { signinWithGoogle, setLoading, emailPassRegister, updateUserProfile } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
-
-
-
+    const [err, setErr] = useState(null)
 
 
     const handleRegister = (e) => {
@@ -20,12 +19,30 @@ const Registration = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
 
+        const email = data.email
+        const pass = data.password
 
-        emailPassRegister(data.email, data.password).then(res => {
-            console.log(res);
-        }).catch(err => {
-            console.log(err);
-        })
+
+        if (pass.length < 6) {
+            toast.error("Password Must 6 Charater Long")
+        } else if (!/(?=.*[a-z])/.test(pass)) {
+            toast.error("Password Must Have 1 Lowercase")
+        } else if (!/(?=.*[A-Z])/.test(pass)) {
+            toast.error("Password Must Have 1 Uppercase")
+        } else {
+            emailPassRegister(email, pass).then(res => {
+                updateUserProfile({
+                    displayName: data.name, photoURL: data.photo
+                })
+
+            }).catch(err => {
+                if (err.code === "auth/email-already-in-use") {
+                    toast.error("User Already Exist ! Please Login.")
+                }
+            })
+
+        }
+
     }
 
     const handleGoogleLogin = () => {
