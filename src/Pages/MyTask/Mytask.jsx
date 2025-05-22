@@ -1,26 +1,25 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
+import SingleTask from '../../Components/SingleTask/SingleTask';
 
 
 const Mytask = () => {
 
     const [myData, setMyData] = useState([])
-
     const { user } = useContext(AuthContext)
 
-    fetch(`http://localhost:3000/my-task/${user.email}`)
-        .then(res => res.json())
-        .then(data => setMyData(data))
-
-
+    useEffect(() => {
+        fetch(`http://localhost:3000/my-task/${user.email}`)
+            .then(res => res.json())
+            .then(data => setMyData(data))
+    }, [user.email])
 
 
 
 
     return (
 
-        myData.map(data => <p key={data._id}>{data.userName}</p>)
-
+        <></>
 
     );
 };

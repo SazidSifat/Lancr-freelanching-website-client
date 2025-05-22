@@ -7,6 +7,7 @@ import Registration from "../Pages/Auth/Registration";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import BrowseTask from "../Pages/BrowseTask/BrowseTask";
 import Mytask from "../Pages/MyTask/Mytask";
+import TaskDetails from "../Components/TaskDetails/TaskDetails";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 Component: Registration
+            },
+            {
+                path: '/task-details/:id',
+                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
+                Component : TaskDetails
+
             }
 
 

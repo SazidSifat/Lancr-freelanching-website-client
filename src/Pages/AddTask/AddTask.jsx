@@ -60,10 +60,14 @@ const AddTask = () => {
                                 <label className='font-medium p-1'>Category</label>
                                 <select name='category' className='border w-full border-base-300 py-3 bg-white px-4 rounded'>
                                     <option value="" disabled >Select category</option>
-                                    <option value="web-development">Web Development</option>
-                                    <option value="design">Design</option>
-                                    <option value="writing">Writing</option>
+                                    <option value="Web-development">Web Development</option>
+                                    <option value="Development & IT">Development & IT</option>
+                                    <option value="Creative & Design">Creative & Design</option>
+                                    <option value="Video & Music">Video And Music</option>
+                                    <option value="Art & Design">Art & Design</option>
+                                    <option value="Writing">Writing</option>
                                     <option value="marketing">Marketing</option>
+
 
                                 </select>
                             </div>
@@ -75,7 +79,7 @@ const AddTask = () => {
 
 
                             <div>
-                                <label htmlFor="budget" className='font-medium p-1'>Budget</label>
+                                <label htmlFor="budget" className='font-medium p-1'>Budget ($)</label>
                                 <input name='budget' type="number" placeholder='Enter budget' className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
                             </div>
 
