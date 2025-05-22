@@ -4,12 +4,17 @@ import * as motion from "motion/react-client"
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
-    const { signinWithGoogle ,user,loading,setLoading  } = useContext(AuthContext);
+    const { signinWithGoogle, setLoading, emailPassLogin } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    console.log(location);
 
 
     const [eye, setEye] = useState(false)
@@ -21,18 +26,28 @@ const Login = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
 
+
+        emailPassLogin(data.email, data.password).then(res=>{
+            console.log( res );
+        }).catch(err=>{
+            console.log( err );
+        })
     }
 
     const handleGoogleLogin = () => {
         signinWithGoogle()
             .then((res => {
-                console.log(res);
-                console.log( user );
+                location.state ? navigate(location.state) : navigate('/')
+                setLoading(false)
             }))
             .catch((err) => {
+                console.log(err);
                 console.log(err.code);
+                setLoading(false)
+                if (err.code === "auth/invalid-credential") {
+                    toast.error("Invalid Credential.")
+                }
             })
-
     }
 
 

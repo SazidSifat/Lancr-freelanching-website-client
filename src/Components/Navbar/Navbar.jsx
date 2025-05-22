@@ -70,9 +70,9 @@ const Navbar = () => {
 
                             <NavLink onClick={() => setToggle(!toggle)} to='/add-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 border-t-0 w-full  border-b-1'>Add Task</NavLink>
 
-                            <NavLink onClick={() => setToggle(!toggle)} to='/contact' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>Browse Task</NavLink>
+                            <NavLink onClick={() => setToggle(!toggle)}  to='/browse-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>Browse Task</NavLink>
 
-                            <NavLink onClick={() => setToggle(!toggle)} to='/contact' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>My Task</NavLink>
+                            <NavLink onClick={() => setToggle(!toggle)} to='/my-task' className='hover:text-primary font-semibold p-2  border-base-300 border-x-0 w-full border-t-0  border-b-1'>My Task</NavLink>
                         </ul>
 
                     </div>

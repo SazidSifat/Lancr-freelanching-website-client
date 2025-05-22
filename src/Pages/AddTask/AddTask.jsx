@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const AddTask = () => {
+
+
+    const { user } = useContext(AuthContext)
+
+    console.log(user.email);
+    console.log();
 
 
     const handleFormtask = (e) => {
@@ -17,7 +25,17 @@ const AddTask = () => {
                 "content-type": "application/json"
             },
             body: JSON.stringify(data)
-        }).then(res => res.json()).then(data => data.json())
+        }).then(res => res.json()).then(data => {
+            if (data.insertedId) {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Task Added Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
     }
 
     return (
@@ -33,13 +51,13 @@ const AddTask = () => {
 
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                             <div>
-                                <label  className='font-medium p-1'>Task Title</label>
+                                <label className='font-medium p-1'>Task Title</label>
                                 <input name='title' type="text" placeholder='Enter task title' className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
                             </div>
 
 
                             <div>
-                                <label  className='font-medium p-1'>Category</label>
+                                <label className='font-medium p-1'>Category</label>
                                 <select name='category' className='border w-full border-base-300 py-3 bg-white px-4 rounded'>
                                     <option value="" disabled >Select category</option>
                                     <option value="web-development">Web Development</option>
@@ -51,7 +69,7 @@ const AddTask = () => {
                             </div>
 
                             <div>
-                                <label  className='font-medium p-1'>Deadline</label>
+                                <label className='font-medium p-1'>Deadline</label>
                                 <input name='deadline' id="deadline" type="date" className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
                             </div>
 
@@ -63,19 +81,19 @@ const AddTask = () => {
 
                             <div>
                                 <label className='font-medium p-1'>User Name</label>
-                                <input name='userName' type="text" value='' readOnly className='border w-full border-base-300 py-3  px-4 rounded text-gray-500'
+                                <input name='userName' type="text" value={user.displayName} readOnly className='border w-full border-base-300 py-3  px-4 rounded text-gray-600'
                                 />
                             </div>
 
                             <div>
-                                <label  className='font-medium p-1'>User Email</label>
-                                <input name='userEmail' type="email" value='' readOnly className='border w-full border-base-300 py-3  px-4 rounded text-gray-500'
+                                <label className='font-medium p-1'>User Email</label>
+                                <input name='userEmail' type="email" value={user.email} readOnly className='border w-full border-base-300 py-3  px-4 rounded  text-gray-600'
                                 />
                             </div>
                         </div>
 
                         <div className='col-span-2'>
-                            <label  className='font-medium p-1'>Description</label>
+                            <label className='font-medium p-1'>Description</label>
                             <textarea name='description' placeholder='What needs to be done?' className='border border-base-300 py-3 bg-white px-4 rounded w-full' rows="4"></textarea>
                         </div>
                         <div className='col-span-2'>

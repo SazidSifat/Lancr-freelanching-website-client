@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as motion from "motion/react-client"
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Registration = () => {
+    const { signinWithGoogle, setLoading, emailPassRegister } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
+
+
+
 
 
     const handleRegister = (e) => {
@@ -14,9 +20,28 @@ const Registration = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
 
-        console.log(data);
 
+        emailPassRegister(data.email, data.password).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
 
+    const handleGoogleLogin = () => {
+        signinWithGoogle()
+            .then((res => {
+                console.log(res);
+                setLoading(false)
+            }))
+            .catch((err) => {
+                console.log(err);
+                console.log(err.code);
+                setLoading(false)
+                if (err.code === "auth/invalid-credential") {
+                    toast.error("Invalid Credential.")
+                }
+            })
     }
 
     return (
@@ -65,7 +90,8 @@ const Registration = () => {
 
                     <motion.button whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.99 }}
-                        type="submit" className='border border-base-300 font-bold  cursor-pointer  py-3 px-6 rounded w-full flex items-center justify-center gap-2  '>
+                        onClick={handleGoogleLogin}
+                        className='border border-base-300 font-bold  cursor-pointer  py-3 px-6 rounded w-full flex items-center justify-center gap-2  '>
                         <FcGoogle size={25} />
                         <span>Signup with Google</span>
                     </motion.button>
