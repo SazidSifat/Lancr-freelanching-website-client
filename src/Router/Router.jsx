@@ -9,6 +9,7 @@ import BrowseTask from "../Pages/BrowseTask/BrowseTask";
 import Mytask from "../Pages/MyTask/Mytask";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
 import Loading from "../Components/Loading/Loading";
+import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
                 path: '/task-details/:id',
                 loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>
+
+            }, {
+                path: '/update-task/:id',
+                element: <PrivateRoute><UpdateTask /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`)
 
             }
 

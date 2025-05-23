@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import SingleTask from '../../Components/SingleTask/SingleTask';
 import Swal from 'sweetalert2';
+import { MdUpdate } from 'react-icons/md';
+import { Fade } from 'react-awesome-reveal';
 
 
 const Mytask = () => {
@@ -51,28 +53,35 @@ const Mytask = () => {
 
 
 
+
+
+
+
     return (
 
         <>
-            <h1 className='text-3xl font-bold text-center py-10 '>My Task</h1>
-            <table className='container mx-auto mb-10 rounded table-fixed shadow-lg'>
+            <Fade>
+                <h1 className='text-3xl font-bold text-center py-10 '>My Task</h1>
+                <table className='container mx-auto mb-10 rounded table-fixed shadow-lg'>
 
-                <thead className='p-4'>
-                    <tr className='bg-primary  text-primary-content rounded'>
-                        <th className='py-3 border border-base-300 '>Title</th>
-                        <th className='py-3 border border-base-300 '>Budget</th>
-                        <th className='py-3 border border-base-300 '>Deadline</th>
-                        <th className='py-3 border border-base-300 '>Action</th>
-                    </tr>
-                </thead>
+                    <thead className='p-4'>
+                        <tr className='bg-primary  text-primary-content rounded'>
+                            <th className='py-3 border border-base-300 '>Title</th>
+                            <th className='py-3 border border-base-300 '>Budget</th>
+                            <th className='py-3 border border-base-300 '>Deadline</th>
+                            <th className='py-3 border border-base-300 '>Action</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    {
-                        myData.map(singleData => <SingleTask handleDelete={handleDelete} key={setMyData._id} singleData={singleData} />)
-                    }
+                    <tbody>
+                        {
+                            myData.map(singleData => <SingleTask handleDelete={handleDelete} key={setMyData._id} singleData={singleData} />)
+                        }
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </Fade>
+
 
         </>
 

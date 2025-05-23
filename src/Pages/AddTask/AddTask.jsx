@@ -43,9 +43,14 @@ const AddTask = () => {
         <Fade>
             <div className='p-3 md:p-10 bg-base-200'>
             <div className='container mx-auto space-y-4 md:space-y-10'>
-                <h1 className=' text-3xl md:text-4xl font-bold text-center'>
+                <div>
+                    <h1 className=' text-3xl md:text-4xl font-bold text-center'>
                     Add a Task<span className='text-primary'>.</span>
+                    
                 </h1>
+            <p className='text-center'><i>'Post Your Task, Find the Right Talent — Fast, Simple, Effective.'</i></p>
+                </div>
+
 
                 <div className='flex shadow-2xl items-center justify-center px-4 md:px-8 py-4 md:py-5 lg:py-10 bg-white rounded lg:w-9/12 mx-auto'>
                     <form onSubmit={handleFormtask} className=' w-full space-y-6'>
@@ -54,13 +59,13 @@ const AddTask = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                             <div>
                                 <label className='font-medium p-1'>Task Title</label>
-                                <input name='title' type="text" placeholder='Enter task title' className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='title' type="text" placeholder='Enter task title' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required/>
                             </div>
 
 
                             <div>
                                 <label className='font-medium p-1'>Category</label>
-                                <select name='category' className='border w-full border-base-300 py-3 bg-white px-4 rounded'>
+                                <select name='category' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required>
                                     <option value="" disabled >Select category</option>
                                     <option value="Web-development">Web Development</option>
                                     <option value="Development & IT">Development & IT</option>
@@ -69,6 +74,9 @@ const AddTask = () => {
                                     <option value="Art & Design">Art & Design</option>
                                     <option value="Writing">Writing</option>
                                     <option value="marketing">Marketing</option>
+                                    <option value="Project & Planning">Project & Planning</option>
+                                    <option value="Cybersecurity">Cybersecurity</option>
+                                    <option value="Software Maintenance">Software Maintenance</option>
 
 
                                 </select>
@@ -76,31 +84,31 @@ const AddTask = () => {
 
                             <div>
                                 <label className='font-medium p-1'>Deadline</label>
-                                <input name='deadline' id="deadline" type="date" className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='deadline' id="deadline" type="date" className='border w-full border-base-300 py-3 bg-white px-4 rounded' required/>
                             </div>
 
 
                             <div>
                                 <label htmlFor="budget" className='font-medium p-1'>Budget ($)</label>
-                                <input name='budget' type="number" placeholder='Enter budget' className='border w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='budget' type="number" placeholder='Enter budget' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required />
                             </div>
 
                             <div>
                                 <label className='font-medium p-1'>User Name</label>
-                                <input name='userName' type="text" value={user.displayName} readOnly className='border w-full border-base-300 py-3  px-4 rounded text-gray-600'
+                                <input name='userName' type="text" value={user.displayName} readOnly className='border w-full required  border-base-300 py-3  px-4 rounded text-gray-600'
                                 />
                             </div>
 
                             <div>
                                 <label className='font-medium p-1'>User Email</label>
-                                <input name='userEmail' type="email" value={user.email} readOnly className='border w-full border-base-300 py-3  px-4 rounded  text-gray-600'
+                                <input name='userEmail' type="email" value={user.email} readOnly className='border w-full border-base-300 py-3  px-4 rounded  text-gray-600' required
                                 />
                             </div>
                         </div>
 
                         <div className='col-span-2'>
                             <label className='font-medium p-1'>Description</label>
-                            <textarea name='description' placeholder='What needs to be done?' className='border border-base-300 py-3 bg-white px-4 rounded w-full' rows="4"></textarea>
+                            <textarea name='description' placeholder='What needs to be done?' className='border border-base-300 py-3 bg-white px-4 rounded w-full' required rows="4"></textarea>
                         </div>
                         <div className='col-span-2'>
                             <button type="submit" className='bg-primary cursor-pointer text-white py-3 px-6 rounded w-full'>
