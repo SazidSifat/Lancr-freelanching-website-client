@@ -86,6 +86,7 @@ const Login = () => {
                                         {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                                     </div>
                                 </div>
+                                <p className="text-right p-1 font-bold cursor-pointer hover:underline  hover:text-primary">Forgot Password?</p>
                             </div>
                         </div>
 

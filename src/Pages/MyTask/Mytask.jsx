@@ -46,22 +46,15 @@ const Mytask = () => {
             }
         });
     }
-
-
-
-
-
-
-
-
-
-
-
     return (
 
         <>
             <Fade>
-                <h1 className='text-3xl font-bold text-center py-10 '>My Task</h1>
+                <div className='py-10'>
+                    <h1 className='text-3xl font-bold text-center  '>My Task</h1>
+                    <p className='text-center font-semibold'><i>"Manage Your Tasks — Track, Edit, and Stay in Control."</i></p>
+                </div>
+
                 <table className='container mx-auto mb-10 rounded table-fixed shadow-lg'>
 
                     <thead className='p-4'>
