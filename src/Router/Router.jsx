@@ -10,6 +10,7 @@ import Mytask from "../Pages/MyTask/Mytask";
 import TaskDetails from "../Components/TaskDetails/TaskDetails";
 import Loading from "../Components/Loading/Loading";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
+import Error from "../Pages/Error/Error";
 
 export const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
 
         ]
 
+    },
+    {
+        path: '*',
+        Component: Error
     }
 
 ])

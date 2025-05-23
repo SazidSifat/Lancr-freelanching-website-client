@@ -13,6 +13,7 @@ const SingleTask = ({ singleData, handleDelete }) => {
         <>
             <tr className=' rounded text-center '>
                 <td className='p-3 border border-base-300 '>{singleData.title}</td>
+                <td className='p-3 border border-base-300 '>{singleData.category}</td>
                 <td className='p-3 border border-base-300 '>${singleData.budget}</td>
                 <td className='p-3 border border-base-300 '>{singleData.deadline}</td>
                 <td className='p-3 border border-base-300 '>
@@ -30,7 +31,7 @@ const SingleTask = ({ singleData, handleDelete }) => {
                         </button>
 
                         {
-                            bid ? <p className='font-bold'>Bid:10</p> : ""
+                            bid ? <p className='font-bold'>Bids:{singleData.countBids ? singleData.countBids : 0}</p> : ""
                         }
                     </div>
                 </td>

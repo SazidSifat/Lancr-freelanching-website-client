@@ -60,6 +60,7 @@ const Mytask = () => {
                     <thead className='p-4'>
                         <tr className='bg-primary  text-primary-content rounded'>
                             <th className='py-3 border border-base-300 '>Title</th>
+                            <th className='py-3 border border-base-300 '>Category</th>
                             <th className='py-3 border border-base-300 '>Budget</th>
                             <th className='py-3 border border-base-300 '>Deadline</th>
                             <th className='py-3 border border-base-300 '>Action</th>
