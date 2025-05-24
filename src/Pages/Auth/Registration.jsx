@@ -10,7 +10,7 @@ const Registration = () => {
 
     const { signinWithGoogle, setLoading, emailPassRegister, updateUserProfile } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
-    const [err, setErr] = useState(null)
+    
 
 
     const handleRegister = (e) => {
