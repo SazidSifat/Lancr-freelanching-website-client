@@ -4,6 +4,29 @@ import { AuthContext } from '../../Context/AuthContext';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
+//category
+const categories = [
+    { value: "Web-development", label: "Web Development" },
+    { value: "Development-IT", label: "Development & IT" },
+    { value: "Creative-Design", label: "Creative & Design" },
+    { value: "Video-Music", label: "Video & Music" },
+    { value: "Art-Design", label: "Art & Design" },
+    { value: "Writing", label: "Writing" },
+    { value: "Marketing", label: "Marketing" },
+    { value: "Project-Planning", label: "Project & Planning" },
+    { value: "Cybersecurity", label: "Cybersecurity" },
+    { value: "Software-Maintenance", label: "Software Maintenance" },
+    { value: "Data-Science-AI", label: "Data Science & AI" },
+    { value: "Blockchain-Web3", label: "Blockchain & Web3" },
+    { value: "Cloud-Computing", label: "Cloud Computing" },
+    { value: "Mobile-App-Development", label: "Mobile App Development" },
+    { value: "Game-Development", label: "Game Development" },
+    { value: "UI-UX-Design", label: "UI/UX Design" },
+    { value: "Translation-Languages", label: "Translation & Languages" },
+    { value: "Ecommerce-Dropshipping", label: "E-commerce & Dropshipping" },
+    { value: "Virtual-Assistance", label: "Virtual Assistance" }
+];
+
 const UpdateTask = () => {
 
     useEffect(() => {
@@ -79,14 +102,9 @@ const UpdateTask = () => {
                                 <div>
                                     <label className='font-medium p-1'>Category</label>
                                     <select name='category' defaultValue={category} className='border bg-base-200 w-full border-base-300 py-3 text-base-content px-4 rounded'>
-                                        <option value="" disabled >Select category</option>
-                                        <option value="Web-development">Web Development</option>
-                                        <option value="Development & IT">Development & IT</option>
-                                        <option value="Creative & Design">Creative & Design</option>
-                                        <option value="Video & Music">Video And Music</option>
-                                        <option value="Art & Design">Art & Design</option>
-                                        <option value="Writing">Writing</option>
-                                        <option value="marketing">Marketing</option>
+                                        {
+                                            categories.map(cat => <option key={cat.value} value={cat.value}>{cat.label}</option>)
+                                        }
 
 
                                     </select>
