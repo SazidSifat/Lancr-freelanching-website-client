@@ -14,7 +14,6 @@ const Layout = () => {
 
     if (loading) {
         return <Loading />
-
     }
 
     return (

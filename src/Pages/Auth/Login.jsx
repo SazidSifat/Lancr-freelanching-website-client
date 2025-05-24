@@ -49,10 +49,6 @@ const Login = () => {
         }
     }
 
-
-
-
-
     const handleGoogleLogin = () => {
         signinWithGoogle()
             .then((() => {
