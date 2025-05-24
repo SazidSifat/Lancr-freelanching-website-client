@@ -104,7 +104,7 @@ const Login = () => {
 
                     <motion.button whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.99 }}
-                        type="submit" className='border border-base-300 font-bold  cursor-pointer  py-3 px-6 rounded w-full flex items-center justify-center gap-2  ' onClick={handleGoogleLogin}>
+                        className='border border-base-300 font-bold  cursor-pointer  py-3 px-6 rounded w-full flex items-center justify-center gap-2  ' onClick={handleGoogleLogin}>
                         <FcGoogle size={25} />
                         <span>Login with Google</span>
                     </motion.button>
