@@ -83,20 +83,20 @@ const AddTask = () => {
                     </div>
 
 
-                    <div className='flex shadow-2xl items-center justify-center px-4 md:px-8 py-4 md:py-5 lg:py-10 bg-white rounded lg:w-9/12 mx-auto'>
+                    <div className='flex shadow-xl items-center justify-center px-4 md:px-8 py-4 md:py-5 lg:py-10 bg-base-100  rounded lg:w-9/12 mx-auto'>
                         <form onSubmit={handleFormtask} className=' w-full space-y-6'>
 
 
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                                 <div>
                                     <label className='font-medium p-1'>Task Title</label>
-                                    <input name='title' type="text" placeholder='Enter task title' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required />
+                                    <input name='title' type="text" placeholder='Enter task title' className='border bg-base-200 w-full border-base-300 py-3 text-base-content px-4 rounded' required />
                                 </div>
 
 
                                 <div>
                                     <label className='font-medium p-1'>Category</label>
-                                    <select name='category' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required>
+                                    <select name='category' className='border text-base-content w-full border-base-300 py-3 bg-base-200 px-4 rounded' required>
 
                                         {
                                             categories.map(cat => <option key={cat.value} value={cat.value}>{cat.label}</option>)
@@ -107,18 +107,18 @@ const AddTask = () => {
 
                                 <div>
                                     <label className='font-medium p-1'>Deadline</label>
-                                    <input name='deadline' id="deadline" type="date" className='border w-full border-base-300 py-3 bg-white px-4 rounded' required />
+                                    <input name='deadline' id="deadline" type="date" className='border text-base-content w-full bg-base-200 border-base-300 py-3  px-4 rounded' required />
                                 </div>
 
 
                                 <div>
                                     <label htmlFor="budget" className='font-medium p-1'>Budget ($)</label>
-                                    <input name='budget' type="number" placeholder='Enter budget' className='border w-full border-base-300 py-3 bg-white px-4 rounded' required />
+                                    <input name='budget' type="number" placeholder='Enter budget' className='border text-base-content w-full border-base-300 py-3 bg-base-200 px-4 rounded' required />
                                 </div>
 
                                 <div>
                                     <label className='font-medium p-1'>User Name</label>
-                                    <input name='userName' type="text" value={user.displayName} readOnly className='border w-full required  border-base-300 py-3  px-4 rounded text-gray-600'
+                                    <input name='userName' type="text" value={user.displayName} readOnly className='border  w-full required  border-base-300 py-3  px-4 rounded text-gray-600'
                                     />
                                 </div>
 
@@ -131,7 +131,7 @@ const AddTask = () => {
 
                             <div className='col-span-2'>
                                 <label className='font-medium p-1'>Description</label>
-                                <textarea name='description' placeholder='What needs to be done?' className='border border-base-300 py-3 bg-white px-4 rounded w-full' required rows="4"></textarea>
+                                <textarea name='description' placeholder='What needs to be done?' className='border text-base-content border-base-300 py-3 bg-base-200 px-4 rounded w-full' required rows="4"></textarea>
                             </div>
                             <div className='col-span-2'>
                                 <button type="submit" className='bg-primary cursor-pointer text-white py-3 px-6 rounded w-full'>

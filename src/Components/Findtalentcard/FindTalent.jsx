@@ -1,9 +1,11 @@
 import React from 'react';
 import image from '../../assets/images/h11-5.png'
+import { div } from 'framer-motion/client';
 
 const FindTalent = () => {
     return (
-        <div className='container mx-auto  flex flex-col md:flex-row items-center justify-between rounded-lg my-20 shadow bg-secondary/15'>
+
+        <div className='container mx-auto  flex flex-col md:flex-row items-center justify-between rounded-lg mt-20 shadow bg-secondary/15'>
 
             <div className='space-y-6 flex-1 p-6 md:p-16'>
                 <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold'>Find the talent needed to get your  business growing.</h1>
@@ -19,6 +21,7 @@ const FindTalent = () => {
             </div>
 
         </div>
+
     );
 };
 

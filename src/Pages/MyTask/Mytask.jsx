@@ -12,7 +12,7 @@ const Mytask = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/my-task/${user.email}`)
+        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/my-task/${user.email}`)
             .then(res => res.json())
             .then(data => setMyData(data))
     }, [user.email, myData])
@@ -30,7 +30,7 @@ const Mytask = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/delete/${id}`, {
+                fetch(`https://freelance-task-marketplace-server-tau.vercel.app/delete/${id}`, {
                     method: "DELETE"
                 }).then((res => res.json()))
                     .then((data) => {

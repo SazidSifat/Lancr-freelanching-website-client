@@ -11,7 +11,7 @@ const BrowseTask = () => {
 
     return (
         <Fade>
-            <div>
+            <div className='bg-base-200'>
                 <div className='py-6'>
                     <h1 className='text-3xl  text-center font-bold'>All Tasks<span className='text-primary'>.</span> </h1>
                     <p className='text-center font-semibold'><i>"Explore Tasks, Discover Opportunities — Your Next Bid Awaits."</i></p>

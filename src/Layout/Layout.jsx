@@ -21,15 +21,14 @@ const Layout = () => {
     return (
         <>
             <ToastContainer />
-            <header className='border-b border-base-300 '>
+            <header className='border-b border-base-300 bg-base-200'>
                 <Navbar />
             </header>
-            <main>
+            <main className=''>
                 <Outlet />
-            </main>
-            <footer>
-                <Footer />
-            </footer>
+            </main >
+            <Footer />
+
         </>
     );
 };

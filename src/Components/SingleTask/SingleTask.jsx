@@ -7,8 +7,6 @@ import { Link } from 'react-router';
 const SingleTask = ({ singleData, handleDelete }) => {
     const [bid, setBid] = useState(false)
 
-
-
     return (
         <>
             <tr className=' rounded text-center '>
@@ -20,7 +18,7 @@ const SingleTask = ({ singleData, handleDelete }) => {
                     <div className='w-full flex flex-col md:flex-row items-center justify-center gap-2'>
                         <Link to={`/update-task/${singleData._id}`}>
                             <button className='p-1 bg-secondary rounded cursor-pointer'>
-                                <BiEdit size={20} />
+                                <BiEdit size={20} className='text-secondary-content' />
                             </button>
                         </Link>
                         <button onClick={() => handleDelete(singleData._id)} className='p-1 bg-red-400  rounded cursor-pointer'>

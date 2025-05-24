@@ -2,7 +2,7 @@ import React from 'react';
 import errimgic from '../../assets/images/icon-error.png'
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
-import Typewriter from 'typewriter-effect';
+import { Typewriter } from 'react-simple-typewriter'
 
 
 
@@ -15,13 +15,7 @@ const Error = () => {
                 <img src={errimgic} alt="" />
             </div>
             <div>
-                <p className='text-2xl font-bold'><i><Typewriter
-                    options={{
-                        strings: ["'404 Error '", "'Page Not Found !'"],
-                        autoStart: true,
-                        loop: true,
-                    }}
-                /></i></p>
+                <p className='text-2xl font-bold'><i><Typewriter cursor={true} words={["404 Error...", "Page Not Found... !"]} loop /></i></p>
             </div>
 
             <motion.div>

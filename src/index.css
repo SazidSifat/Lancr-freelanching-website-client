@@ -6,60 +6,36 @@
   name: "light";
   default: true;
 
-  /* 🎯 Primary Brand Color */
-  --color-primary: #1F6F65;
-  /* Teal Blue - Modern & Trustworthy */
+  /* Refined Light Palette */
+  --color-primary: #1F6F65; /* A pleasant forest green */
   --color-primary-content: #FFFFFF;
-  /* Text on Primary */
-
-  /* ✨ Secondary Call-to-Action */
-  --color-secondary: #FFD166;
-  /* Warm Gold - Premium CTA */
-  --color-secondary-content: #1A1A1A;
-  /* Text on Secondary */
-
-  /* 🌟 Accent / Highlight */
-  --color-accent: #00E599;
-  /* Aqua Green - Vibrant Accent */
-  --color-accent-content: #1A1A1A;
-  /* Text on Accent */
-
-  /* 🌌 Neutral Base */
-  --color-neutral: #0B0F1A;
-  /* Deep Navy - Dark Background */
-  --color-neutral-content: #FFFFFF;
-  /* Text on Neutral */
-
-  /* 🧾 Base Backgrounds & Text */
+  --color-secondary: #FFC107; /* A warm, inviting amber */
+  --color-secondary-content: #212529; /* Dark text for contrast */
+  --color-accent: #17A2B8; /* A bright, clear blue-green for highlights */
+  --color-accent-content: #FFFFFF;
   --color-base-100: #FFFFFF;
-  /* Main Background */
-  --color-base-200: #F3F6FA;
-  /* Light Section Background */
-  --color-base-300: #D9E1EC;
-  /* Borders / Cards */
-  --color-base-content: #1F2937;
-  /* Default Text */
-
-  /* 📘 Info */
-  --color-info: #00AFFF;
-  /* Bright Cyan */
-  --color-info-content: #FFFFFF;
-
-  /* ✅ Success */
-  --color-success: #10B981;
-  /* Emerald Green */
-  --color-success-content: #FFFFFF;
-
-  /* ⚠️ Warning */
-  --color-warning: #FFB74D;
-  /* Soft Amber */
-  --color-warning-content: #1A1A1A;
-
-  /* ❌ Error */
-  --color-error: #EF4444;
-  /* Vibrant Red */
-  --color-error-content: #FFFFFF;
+  --color-base-200: #F8F9FA; /* Off-white for subtle background */
+  --color-base-300: #E9ECEF; /* Light gray for borders/dividers */
+  --color-base-content: #343A40; /* Dark gray for main text */
 }
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+
+  /* Refined Dark Palette (Adjusted) */
+  --color-primary: #3D8B7A; /* A muted, deep teal */
+  --color-primary-content: #FFFFFF; /* Deeper text for primary content */
+  --color-secondary: #FFD700; /* A slightly brighter gold for contrast on dark */
+  --color-secondary-content: #1A1A1A; /* Dark text for contrast */
+  --color-accent: #20C997; /* A vibrant, slightly lighter green for pop */
+  --color-accent-content: #1A1A1A; /* Dark text for contrast */
+  --color-base-100: #1A1A1A; /* Softer dark background */
+  --color-base-200: #282828; /* Softer dark background */
+  --color-base-300: #3A3A3A; /* Border color */
+  --color-base-content: #E0E0E0; /* Off-white for main text */
+}
+
 
 
 body {
