@@ -40,13 +40,14 @@ const Registration = () => {
                 updateUserProfile({
                     displayName: data.name, photoURL: data.photo
                 })
+                setLoading(false)
                 location.state ? navigate(location.state) : navigate('/')
-
 
             }).catch(err => {
                 if (err.code === "auth/email-already-in-use") {
                     toast.error("User Already Exist ! Please Login.")
                 }
+                setLoading(false)
             })
 
         }
@@ -56,15 +57,16 @@ const Registration = () => {
     const handleGoogleLogin = () => {
         signinWithGoogle()
             .then((res => {
-                
+
                 setLoading(false)
                 location.state ? navigate(location.state) : navigate('/')
 
             }))
             .catch((err) => {
-        
+
                 setLoading(false)
                 if (err.code === "auth/invalid-credential") {
+                    setLoading(false)
                     toast.error("Invalid Credential.")
                 }
             })

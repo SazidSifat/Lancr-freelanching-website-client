@@ -34,11 +34,15 @@ const Login = () => {
         if (data.email && data.password) {
             emailPassLogin(data.email, data.password).then(() => {
                 location.state ? navigate(location.state) : navigate('/')
+                setLoading(false)
+
 
             }).catch(err => {
                 if (err.code === "auth/invalid-credential") {
                     toast.error("Invalid Credential.")
                 }
+                setLoading(false)
+
             })
         } else {
             toast.error("All Field Require!")
@@ -56,7 +60,6 @@ const Login = () => {
                 setLoading(false)
             }))
             .catch((err) => {
-
                 setLoading(false)
                 if (err.code === "auth/invalid-credential") {
                     toast.error("Invalid Credential.")
