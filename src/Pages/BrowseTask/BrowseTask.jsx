@@ -12,7 +12,7 @@ const BrowseTask = () => {
     
         }, [])
 
-    console.log(alltask);
+  
 
     return (
         <Fade>

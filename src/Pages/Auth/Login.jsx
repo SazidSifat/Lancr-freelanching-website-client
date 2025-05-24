@@ -28,7 +28,7 @@ const Login = () => {
         const formData = new FormData(e.target)
         const data = Object.fromEntries(formData.entries())
 
-        console.log(data);
+
 
 
         if (data.email && data.password) {
@@ -56,8 +56,7 @@ const Login = () => {
                 setLoading(false)
             }))
             .catch((err) => {
-                console.log(err);
-                console.log(err.code);
+
                 setLoading(false)
                 if (err.code === "auth/invalid-credential") {
                     toast.error("Invalid Credential.")

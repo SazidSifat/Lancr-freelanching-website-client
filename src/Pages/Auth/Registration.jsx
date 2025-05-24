@@ -9,14 +9,14 @@ import { AuthContext } from '../../Context/AuthContext';
 const Registration = () => {
 
     useEffect(() => {
-            document.title = "Register Now !"
-    
-        }, [])
+        document.title = "Register Now !"
+
+    }, [])
 
     const { signinWithGoogle, setLoading, emailPassRegister, updateUserProfile } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
-       const navigate = useNavigate()
-    
+    const navigate = useNavigate()
+
 
 
     const handleRegister = (e) => {
@@ -56,12 +56,13 @@ const Registration = () => {
     const handleGoogleLogin = () => {
         signinWithGoogle()
             .then((res => {
-                console.log(res);
+                
                 setLoading(false)
+                location.state ? navigate(location.state) : navigate('/')
+
             }))
             .catch((err) => {
-                console.log(err);
-                console.log(err.code);
+        
                 setLoading(false)
                 if (err.code === "auth/invalid-credential") {
                     toast.error("Invalid Credential.")

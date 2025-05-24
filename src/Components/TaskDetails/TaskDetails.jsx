@@ -9,12 +9,12 @@ const TaskDetails = () => {
 
     
     const task = useLoaderData()
-    console.log(task);
+    
     const [bid, setBid] = useState(task.countBids)
 
 
     let bids = task.countBids || 0;
-    console.log(bids);
+    
 
 
 

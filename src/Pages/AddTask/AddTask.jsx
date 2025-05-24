@@ -38,9 +38,7 @@ const AddTask = () => {
 
     const { user } = useContext(AuthContext)
 
-    console.log(user.email);
-    console.log();
-
+   
 
     const handleFormtask = (e) => {
         e.preventDefault();
