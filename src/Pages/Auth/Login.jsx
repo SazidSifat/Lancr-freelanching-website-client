@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client"
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from "react-router";
@@ -7,6 +7,11 @@ import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
+
+    useEffect(() => {
+        document.title = "Login Now !"
+
+    }, [])
 
     const { signinWithGoogle, setLoading, emailPassLogin } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -81,7 +86,7 @@ const Login = () => {
                             <div>
                                 <label className='font-medium p-1'> Password</label>
                                 <div className='border w-full border-base-300 py-3 bg-base-200 rounded text-base-content px-4 flex justify-between items-center ocus:outline-0'>
-                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 text-base-content'  />
+                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 text-base-content' />
                                     <div onClick={() => setEye(!eye)} className='cursor-pointer'>
                                         {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                                     </div>

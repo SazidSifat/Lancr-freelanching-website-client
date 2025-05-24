@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as motion from "motion/react-client"
 import { FcGoogle } from 'react-icons/fc';
@@ -7,6 +7,11 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthContext';
 
 const Registration = () => {
+
+    useEffect(() => {
+            document.title = "Register Now !"
+    
+        }, [])
 
     const { signinWithGoogle, setLoading, emailPassRegister, updateUserProfile } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
@@ -75,20 +80,20 @@ const Registration = () => {
                         <div className='grid grid-cols-1  gap-6'>
                             <div>
                                 <label className='font-medium p-1'> Name</label>
-                                <input name='name' type="text" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
+                                <input required name='name' type="text" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Email</label>
-                                <input name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
+                                <input required name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Photo</label>
-                                <input name='photo' type="text" placeholder='Photo URL' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
+                                <input required name='photo' type="text" placeholder='Photo URL' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Password</label>
                                 <div className='border w-full border-base-300 py-3 bg-base-200 px-4 flex justify-between items-center ocus:outline-0'>
-                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 bg-base-200' />
+                                    <input required name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 bg-base-200' />
                                     <div onClick={() => setEye(!eye)} className='cursor-pointer'>
                                         {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                                     </div>

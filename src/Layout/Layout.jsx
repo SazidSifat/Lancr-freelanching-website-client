@@ -12,7 +12,6 @@ const Layout = () => {
 
     const { loading } = useContext(AuthContext)
 
-
     if (loading) {
         return <Loading />
 
