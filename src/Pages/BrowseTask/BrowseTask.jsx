@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router';
 import Task from '../../Components/Task/Task';
 import { Fade, Zoom } from 'react-awesome-reveal';
@@ -6,6 +6,11 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 
 const BrowseTask = () => {
     const alltask = useLoaderData()
+
+      useEffect(() => {
+            document.title = "Browse All Task"
+    
+        }, [])
 
     console.log(alltask);
 

@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Fade, Zoom } from 'react-awesome-reveal';
-import { data, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 import Error from '../../Pages/Error/Error';
 import Swal from 'sweetalert2';
 
 const TaskDetails = () => {
+
+    
     const task = useLoaderData()
     console.log(task);
     const [bid, setBid] = useState(task.countBids)
@@ -36,7 +38,7 @@ const TaskDetails = () => {
                         timer: 1500
 
                     });
-                    setBid(bid+1)
+                    setBid(bid + 1)
                 }
             })
 

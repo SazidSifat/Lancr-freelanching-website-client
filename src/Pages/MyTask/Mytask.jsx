@@ -8,10 +8,14 @@ import { Fade } from 'react-awesome-reveal';
 
 const Mytask = () => {
 
+
+
     const [myData, setMyData] = useState([])
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
+        document.title = 'My task'
+
         fetch(`https://freelance-task-marketplace-server-tau.vercel.app/my-task/${user.email}`)
             .then(res => res.json())
             .then(data => setMyData(data))

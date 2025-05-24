@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { AuthContext } from '../../Context/AuthContext';
-import { data, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdateTask = () => {
+
+    useEffect(() => {
+        document.title = 'Lancr | Update Task'
+    }, [])
+
 
     const task = useLoaderData()
 

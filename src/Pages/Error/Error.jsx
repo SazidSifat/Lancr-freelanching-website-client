@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import errimgic from '../../assets/images/icon-error.png'
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
@@ -7,6 +7,11 @@ import { Typewriter } from 'react-simple-typewriter'
 
 
 const Error = () => {
+
+    useEffect(() => {
+        document.title = 'Error 404'
+    }, [])
+    
     return (
         <div className='container mx-auto p-20 flex flex-col gap-8 items-center justify-center min-h-screen' >
 

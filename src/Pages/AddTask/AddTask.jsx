@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
@@ -29,6 +29,11 @@ const categories = [
 
 
 const AddTask = () => {
+
+    useEffect(() => {
+        document.title = "Add Task"
+
+    }, [])
 
 
     const { user } = useContext(AuthContext)

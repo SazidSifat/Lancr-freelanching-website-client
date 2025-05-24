@@ -65,7 +65,7 @@ const Login = () => {
         <div className="bg-base-200">
             <div className='  p-8  flex items-center justify-center container mx-auto '>
 
-                <form onSubmit={handleLogin} className=' space-y-6 lg:w-[50%] bg-white  shadow-2xl px-6 py-8 lg:px-20 lg:py-20 rounded'>
+                <form onSubmit={handleLogin} className=' space-y-6 lg:w-[50%] bg-base-100  shadow-2xl px-6 py-8 lg:px-20 lg:py-20 rounded'>
 
                     <div className='text-center'>  <p className='lg:text-xl'>Welcome Back !</p>
                         <p className='text-3xl lg:text-4xl font-bold'>Login Now</p>
@@ -76,12 +76,12 @@ const Login = () => {
                         <div className='grid grid-cols-1  gap-6'>
                             <div>
                                 <label className='font-medium p-1'> Email</label>
-                                <input name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Password</label>
-                                <div className='border w-full border-base-300 py-3 bg-white px-4 flex justify-between items-center ocus:outline-0'>
-                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0' />
+                                <div className='border w-full border-base-300 py-3 bg-base-200 rounded text-base-content px-4 flex justify-between items-center ocus:outline-0'>
+                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 text-base-content'  />
                                     <div onClick={() => setEye(!eye)} className='cursor-pointer'>
                                         {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                                     </div>

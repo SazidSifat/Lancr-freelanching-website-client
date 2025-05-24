@@ -65,7 +65,7 @@ const Registration = () => {
         <div className='bg-base-200'>
             <div className=' p-8 flex items-center justify-center container mx-auto '>
 
-                <form onSubmit={handleRegister} className=' space-y-6 lg:w-[50%] shadow-2xl bg-white px-6 lg:px-20 py-8 lg:py-10 rounded'>
+                <form onSubmit={handleRegister} className=' space-y-6 lg:w-[50%] shadow-2xl bg-base-100 px-6 lg:px-20 py-8 lg:py-10 rounded'>
 
                     <div className='text-center'>  <p className='text-xl'>Welcome,</p>
                         <p className='text-3xl font-bold'>Create Your Account Now</p></div>
@@ -75,20 +75,20 @@ const Registration = () => {
                         <div className='grid grid-cols-1  gap-6'>
                             <div>
                                 <label className='font-medium p-1'> Name</label>
-                                <input name='name' type="text" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='name' type="text" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Email</label>
-                                <input name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='email' type="email" placeholder='Enter email' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Photo</label>
-                                <input name='photo' type="text" placeholder='Photo URL' className='border focus:outline-0 w-full border-base-300 py-3 bg-white px-4 rounded' />
+                                <input name='photo' type="text" placeholder='Photo URL' className='border focus:outline-0 w-full border-base-300 py-3 bg-base-200 px-4 rounded' />
                             </div>
                             <div>
                                 <label className='font-medium p-1'> Password</label>
-                                <div className='border w-full border-base-300 py-3 bg-white px-4 flex justify-between items-center ocus:outline-0'>
-                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0' />
+                                <div className='border w-full border-base-300 py-3 bg-base-200 px-4 flex justify-between items-center ocus:outline-0'>
+                                    <input name='password' type={eye ? "text" : "password"} placeholder='Enter password' className=' focus:outline-0 bg-base-200' />
                                     <div onClick={() => setEye(!eye)} className='cursor-pointer'>
                                         {eye ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
                                     </div>
