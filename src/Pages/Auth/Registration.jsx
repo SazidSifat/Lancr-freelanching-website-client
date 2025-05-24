@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as motion from "motion/react-client"
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthContext';
 
@@ -15,6 +15,7 @@ const Registration = () => {
 
     const { signinWithGoogle, setLoading, emailPassRegister, updateUserProfile } = useContext(AuthContext);
     const [eye, setEye] = useState(false)
+       const navigate = useNavigate()
     
 
 
@@ -39,6 +40,8 @@ const Registration = () => {
                 updateUserProfile({
                     displayName: data.name, photoURL: data.photo
                 })
+                location.state ? navigate(location.state) : navigate('/')
+
 
             }).catch(err => {
                 if (err.code === "auth/email-already-in-use") {
