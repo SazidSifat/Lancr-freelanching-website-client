@@ -1,6 +1,6 @@
-# Freelance Task Marketplace
+# Freelance Task Marketplace-client
 
-**Live Site:** [Visit Website](https://your-live-site-url.com)
+**Live Site:** [Visit Website](https://freelance-task-8f223.web.app)
 
 ## About the Project
 Freelance Task Marketplace is a web application where users can post freelance tasks and freelancers can bid on them. It offers a modern, clean interface with responsive and protected routing, authentication, and CRUD functionalities.
@@ -21,11 +21,10 @@ Freelance Task Marketplace is a web application where users can post freelance t
 - `react-toastify` 
 - `sweetalert2` 
 - `lottie-react` 
-- `react-awesome-reveal` / `react-tooltip` / `react-simple-typewriter` 
-- `dotenv` 
-- `cors`
-- `express` –
-- `mongodb` 
+- `react-awesome-reveal`
+- `react-tooltip`
+- `react-simple-typewriter` 
+ 
 
 ## Technologies Used
 
