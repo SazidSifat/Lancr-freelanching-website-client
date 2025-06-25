@@ -36,7 +36,12 @@ This is the **client-side** of the Freelance Task Marketplace — a MERN stack p
 
 Follow these steps to run the client project locally on your machine:
 
----
+```bash
+# 1. Clone the repository
+git clone https://github.com/SazidSifat/Lancr-freelanching-website-client.git
+cd Lancr-freelanching-website-client
+```
+
 ### Dependencies
 ```json
 {
@@ -72,13 +77,6 @@ Follow these steps to run the client project locally on your machine:
   }
 }
 ```
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/SazidSifat/Lancr-freelanching-website-client.git
-cd Lancr-freelanching-website-client
-```
-
 ### 2. Install dependencies
 ```bash
 npm install
