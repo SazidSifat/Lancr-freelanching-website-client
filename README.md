@@ -32,7 +32,7 @@ This is the **client-side** of the Freelance Task Marketplace — a MERN stack p
 
 ---
 
-## 🧑‍💻 Local Setup Instructions
+### 🧑‍💻 Local Setup Instructions
 
 Follow these steps to run the client project locally on your machine:
 
@@ -42,11 +42,11 @@ git clone https://github.com/SazidSifat/Lancr-freelanching-website-client.git
 cd Lancr-freelanching-website-client
 ```
 
-# 2. Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
-# 3. Create a .env file in the root directory and add the following:
+### 3. Create a .env file in the root directory and add the following:
 ```bash
 VITE_apiKey=your_firebase_api_key
 VITE_authDomain=your_auth_domain
@@ -56,7 +56,7 @@ VITE_messagingSenderId=your_messaging_id
 VITE_appId=your_app_id
 ```
 
-# 4. Start the development server
+### 4. Start the development server
 ```bash
 npm run dev
 ```
