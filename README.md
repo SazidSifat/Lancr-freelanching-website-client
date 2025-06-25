@@ -2,54 +2,55 @@
 
 This is the **client-side** of the Freelance Task Marketplace — a MERN stack platform where users can post freelance tasks, browse jobs, and bid based on skills, budget, and deadlines.
 
-Live Site: [https://freelance-task-8f223.web.app/](https://freelance-task-8f223.web.app/)
+🔗 **Live Site**: [https://freelance-task-8f223.web.app/](https://freelance-task-8f223.web.app/)
 
 ---
 
 ## 🚀 Key Features
 
 - 🔐 Firebase authentication (Email/Password + Google Login)
-- 🧾 Task creation, update, and browsing
+- 🧾 Task creation, update, delete, and browsing
 - 🧭 Protected routes (Add Task, My Tasks, Task Details, etc.)
-- 📆 Tasks sorted by deadline
+- 📆 Featured tasks sorted by deadline (recent deadlines first)
 - 🌙 Dark/Light mode toggle
 - 🎉 SweetAlert2 for alerts & React Awesome Reveal for animations
 - 📱 Responsive layout for mobile, tablet, and desktop
-- 🔄 Loading spinner for async states
-- ❌ Custom 404 Page
+- 🔄 Loading spinner during async operations
+- ❌ Custom 404 Page for unknown routes
 
 ---
 
 ## 🔧 Technologies Used
 
-- React
-- React Router DOM
-- Tailwind CSS
-- Firebase Authentication
-- Axios
-- SweetAlert2
-- React Awesome Reveal / Typewriter / Tooltip (one required)
-- Vite
+- **React** (Vite)
+- **React Router DOM**
+- **Tailwind CSS**
+- **Firebase Authentication**
+- **Axios**
+- **SweetAlert2**
+- **React Awesome Reveal**
 
 ---
 
 ## 🧑‍💻 Local Setup Instructions
 
-### Step 1: Clone the Repository
+Follow these steps to run the client project locally on your machine:
 
 ```bash
-git clone https://github.com/your-username/freelance-marketplace-client.git
-cd freelance-marketplace-client
+# 1. Clone the repository
+git clone https://github.com/SazidSifat/Lancr-freelanching-website-client.git
+cd Lancr-freelanching-website-client
 
-```install
+# 2. Install dependencies
 npm install
 
-```env
+# 3. Create a .env file in the root directory and add the following:
 VITE_apiKey=your_firebase_api_key
 VITE_authDomain=your_auth_domain
 VITE_projectId=your_project_id
 VITE_storageBucket=your_storage_bucket
 VITE_messagingSenderId=your_messaging_id
 VITE_appId=your_app_id
-VITE_backendUrl=http://localhost:5000
 
+# 4. Start the development server
+npm run dev
