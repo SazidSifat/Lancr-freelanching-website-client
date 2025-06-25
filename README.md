@@ -31,6 +31,12 @@ This is the **client-side** of the Freelance Task Marketplace — a MERN stack p
 - **React Awesome Reveal**
 
 ---
+
+### 🧑‍💻 Local Setup Instructions
+
+Follow these steps to run the client project locally on your machine:
+
+---
 ### Dependencies
 ```json
 {
@@ -65,15 +71,7 @@ This is the **client-side** of the Freelance Task Marketplace — a MERN stack p
     "vite": "^6.3.5"
   }
 }
-
-  
 ```
-
----
-
-### 🧑‍💻 Local Setup Instructions
-
-Follow these steps to run the client project locally on your machine:
 
 ```bash
 # 1. Clone the repository
