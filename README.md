@@ -29,6 +29,9 @@ This is the **client-side** of the Freelance Task Marketplace — a MERN stack p
 - **Axios**
 - **SweetAlert2**
 - **React Awesome Reveal**
+- **Node.Js**
+- **express.Js**
+- **mongoDB**
 
 ---
 
