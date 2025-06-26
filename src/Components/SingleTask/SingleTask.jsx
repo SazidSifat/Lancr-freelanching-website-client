@@ -16,7 +16,7 @@ const SingleTask = ({ singleData, handleDelete }) => {
                 <td className='p-3 border border-base-300 '>{singleData.deadline}</td>
                 <td className='p-3 border border-base-300 '>
                     <div className='w-full flex flex-col md:flex-row items-center justify-center gap-2'>
-                        <Link to={`/update-task/${singleData._id}`}>
+                        <Link to={`/dashboard/update-task/${singleData._id}`}>
                             <button className='p-1 bg-secondary rounded cursor-pointer'>
                                 <BiEdit size={20} className='text-secondary-content' />
                             </button>

@@ -82,7 +82,7 @@ const UpdateTask = () => {
 
     return (
         <Fade>
-            <div className='p-3 md:p-10 bg-base-200'>
+            <div className='p-3 md:p-10 '>
                 <div className='container mx-auto space-y-4 md:space-y-10'>
                     <h1 className=' text-3xl md:text-4xl font-bold text-center'>
                         Update this Task<span className='text-primary'>.</span>

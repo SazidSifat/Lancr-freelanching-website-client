@@ -13,6 +13,9 @@ import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 import Error from "../Pages/Error/Error";
 import Dashboard from "../Layout/Dashboard";
 import Profile from "../Pages/Profile/Profile";
+import ContactPage from "../Pages/Contact/Contact";
+import Contact from "../Pages/Contact/Contact";
+import AboutPage from "../Pages/AboutPage/AboutPage";
 
 export const router = createBrowserRouter([
     {
@@ -48,14 +51,14 @@ export const router = createBrowserRouter([
                 hydrateFallbackElement: <Loading />
 
 
-            }, {
-                path: '/update-task/:id',
-                element: <PrivateRoute><UpdateTask /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
-                hydrateFallbackElement: <Loading />
-
-
+            },{
+                path:'/contact',
+                Component:Contact
             },
+            {
+                path:'/about',
+                Component:AboutPage
+            }
 
 
 
@@ -68,8 +71,14 @@ export const router = createBrowserRouter([
         children: [
 
             {
-                path:'dashboard/profile',
+                index: true,
                 Component: Profile
+
+            },
+
+            {
+                path: '/dashboard/profile',
+                element: <PrivateRoute><Profile /></PrivateRoute>
             },
             {
                 path: '/dashboard/add-task',
@@ -78,6 +87,14 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/my-task',
                 element: <PrivateRoute><Mytask /></PrivateRoute>
+
+            },
+            {
+                path: '/dashboard/update-task/:id',
+                element: <PrivateRoute><UpdateTask /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
+                hydrateFallbackElement: <Loading />
+
 
             },
 
