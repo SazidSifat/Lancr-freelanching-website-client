@@ -38,7 +38,7 @@ const AddTask = () => {
 
     const { user } = useContext(AuthContext)
 
-   
+
 
     const handleFormtask = (e) => {
         e.preventDefault();
@@ -54,7 +54,7 @@ const AddTask = () => {
 
 
         //for task
-        fetch("https://freelance-task-marketplace-server-tau.vercel.app/addtask", {
+        fetch("http://localhost:3000/addtask", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -74,9 +74,9 @@ const AddTask = () => {
     }
 
     return (
-        <Fade>
-            <div className='p-3 md:p-10 bg-base-200'>
-                <div className='container mx-auto space-y-4 md:space-y-10'>
+        <Fade className='px-2 mx-auto '>
+            <div className='p-3 md:p-10 '>
+                <div className=' space-y-4 md:space-y-10'>
                     <div>
                         <h1 className=' text-3xl md:text-4xl font-bold text-center'>
                             Add a Task<span className='text-primary'>.</span>
@@ -121,13 +121,13 @@ const AddTask = () => {
 
                                 <div>
                                     <label className='font-medium p-1'>User Name</label>
-                                    <input name='userName' type="text" value={user.displayName} readOnly className='border  w-full required  border-base-300 py-3  px-4 rounded text-gray-600'
+                                    <input name='userName' type="text" value={user?.displayName} readOnly className='border  w-full required  border-base-300 py-3  px-4 rounded text-gray-600'
                                     />
                                 </div>
 
                                 <div>
                                     <label className='font-medium p-1'>User Email</label>
-                                    <input name='userEmail' type="email" value={user.email} readOnly className='border w-full border-base-300 py-3  px-4 rounded  text-gray-600' required
+                                    <input name='userEmail' type="email" value={user?.email} readOnly className='border w-full border-base-300 py-3  px-4 rounded  text-gray-600' required
                                     />
                                 </div>
                             </div>

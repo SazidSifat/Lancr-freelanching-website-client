@@ -4,6 +4,7 @@ import FeatureTask from '../../Components/Featuretask/FeatureTask';
 import { useLoaderData } from 'react-router';
 import FindTalent from '../../Components/Findtalentcard/FindTalent';
 import WhatClient from '../../Components/WhatClient/WhatClient';
+import Category from '../../Components/Category/Category';
 
 const HomePage = () => {
 
@@ -14,8 +15,9 @@ const HomePage = () => {
 
     const featureData = useLoaderData()
     return (
-        <div className='bg-base-200 pb-20 '>
+        <div className='bg-base-200 pb-20 space-y-10'>
             <Banner />
+            <Category />
             <FeatureTask featureData={featureData} />
             <FindTalent />
             <WhatClient />

@@ -26,8 +26,8 @@ const Theme = () => {
 
 
     return (
-        <div className='flex items-center justify-center'>
-            <button className='px-6' onClick={toggleTheme}>{theme === "light" ? <motion.div
+        <div className='flex items-center justify-center cursor-pointer'>
+            <button className='px-6 cursor-pointer' onClick={toggleTheme}>{theme === "light" ? <motion.div
                 key="sun"
                 initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
                 animate={{ opacity: 1, rotate: 0, scale: 1 }}

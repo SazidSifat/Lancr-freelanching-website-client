@@ -46,9 +46,9 @@ const feedback = [
 
 const WhatClient = () => {
     return (
-        <div className='p-2'>
+        <div className='p-2 '>
             <div className='container mx-auto '>
-                <h1 className='text-4xl font-bold text-center py-10'>What Client Says,</h1>
+                <h1 className='text-4xl font-bold text-center pb-10'>What Client Says,</h1>
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
@@ -63,7 +63,7 @@ const WhatClient = () => {
                     }}
                     pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
-                    className="mySwiper"
+                    className="mySwiper shadow"
                     breakpoints={{
                         320: { slidesPerView: 1 },
                         640: { slidesPerView: 2 },

@@ -11,6 +11,8 @@ import TaskDetails from "../Components/TaskDetails/TaskDetails";
 import Loading from "../Components/Loading/Loading";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 import Error from "../Pages/Error/Error";
+import Dashboard from "../Layout/Dashboard";
+import Profile from "../Pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -20,24 +22,17 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: HomePage,
-                loader: () => fetch('https://freelance-task-marketplace-server-tau.vercel.app/feature-task'),
+                loader: () => fetch('http://localhost:3000/feature-task'),
                 hydrateFallbackElement: <Loading />
             },
-            {
-                path: '/add-task',
-                element: <PrivateRoute> <AddTask /> </PrivateRoute>
-            },
+
             {
                 path: '/browse-task',
                 element: <BrowseTask />,
-                loader: () => fetch("https://freelance-task-marketplace-server-tau.vercel.app/all-task"),
+                loader: () => fetch("http://localhost:3000/all-task"),
                 hydrateFallbackElement: <Loading />
             },
-            {
-                path: '/my-task',
-                element: <PrivateRoute><Mytask /></PrivateRoute>
 
-            },
             {
                 path: "/login",
                 Component: Login
@@ -48,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/task-details/:id',
-                loader: ({ params }) => fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>,
                 hydrateFallbackElement: <Loading />
 
@@ -56,15 +51,37 @@ export const router = createBrowserRouter([
             }, {
                 path: '/update-task/:id',
                 element: <PrivateRoute><UpdateTask /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
                 hydrateFallbackElement: <Loading />
 
 
-            }
+            },
+
 
 
         ]
 
+    },
+    {
+        path: '/dashboard',
+        Component: Dashboard,
+        children: [
+
+            {
+                path:'dashboard/profile',
+                Component: Profile
+            },
+            {
+                path: '/dashboard/add-task',
+                element: <PrivateRoute> <AddTask /> </PrivateRoute>
+            },
+            {
+                path: '/dashboard/my-task',
+                element: <PrivateRoute><Mytask /></PrivateRoute>
+
+            },
+
+        ]
     },
     {
         path: '/*',

@@ -44,7 +44,7 @@ const UpdateTask = () => {
         const formData = new FormData(e.target)
         const form = Object.fromEntries(formData.entries())
 
-        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/update-my-task/${_id}`, {
+        fetch(`http://localhost:3000/update-my-task/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

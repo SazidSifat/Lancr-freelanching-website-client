@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { use, useContext, useState } from 'react';
 import logo from '../../assets/images/Logo maker project.png'
 import { Link, Links, NavLink } from 'react-router';
 import { CgMenuRightAlt } from "react-icons/cg";
@@ -12,7 +12,6 @@ const Navbar = () => {
 
     const { user, signOutUser } = useContext(AuthContext)
 
-   
 
     const handleSignOut = () => {
         signOutUser().then(() => {
@@ -31,9 +30,11 @@ const Navbar = () => {
                 <div className='flex  items-center gap-5 lg:gap-10'>
                     <ul className='space-x-3 font-bold hidden md:block'>
                         <NavLink className='p-1' to='/'>Home</NavLink>
-                        <NavLink className='p-1' to='/add-task'>Add Task</NavLink>
+                        {/* <NavLink className='p-1' to='/add-task'>Add Task</NavLink> */}
                         <NavLink className='p-1' to='/browse-task'>Browse Task</NavLink>
-                        <NavLink className='p-1' to='/my-task'>My Task</NavLink>
+                        <NavLink className='p-1' to='/contact'>Contact</NavLink>
+                        <NavLink className='p-1' to='/about'>About Us</NavLink>
+                        {/* <NavLink className='p-1' to='/my-task'>My Task</NavLink> */}
                     </ul>
 
                     <div className='flex items-center justify-center'>
@@ -41,9 +42,10 @@ const Navbar = () => {
 
                         {
                             user ? <div className='  relative inline-block group '>
-                                <img src={user.photoURL} alt="" className='w-11 rounded cursor-pointer' />
-                                <div className="absolute  -translate-x-3/4 top-12 z-10 bg-base-100 text-white px-6 py-3 rounded whitespace-nowrap cursor-pointer select-none opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all flex items-center justify-center flex-col gap-3 ">
-                                    <h1 className='text-base-content font-bold'>{user.displayName}</h1>
+                                <img src={user.photoURL} referrerPolicy='no-referrer' alt="Image" className='w-11 rounded cursor-pointer' />
+                                <div className="absolute  -translate-x-3/4 top-12 z-10 bg-base-100 text-white px-6 py-3 rounded whitespace-nowrap cursor-pointer select-none opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all flex   flex-col gap-2 ">
+                                    <h1 className='text-base-content font-bold'>{user?.displayName}</h1>
+                                    <Link to='/dashboard' className='text-base-content font-bold hover:text-secondary'>Dashboard</Link>
                                     <button onClick={handleSignOut} to='/login' className='btn text-red-400 w-full border border-red-400  hover:bg-red-400] hover:text-red-400 '>
                                         Logout
                                     </button>

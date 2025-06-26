@@ -20,7 +20,7 @@ const TaskDetails = () => {
 
     const bidsCount = () => {
         bids++
-        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task/${task._id}`, {
+        fetch(`http://localhost:3000/all-task/${task._id}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

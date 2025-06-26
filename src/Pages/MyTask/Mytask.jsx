@@ -16,7 +16,7 @@ const Mytask = () => {
     useEffect(() => {
         document.title = 'My task'
 
-        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/my-task/${user.email}`)
+        fetch(`http://localhost:3000/my-task/${user.email}`)
             .then(res => res.json())
             .then(data => setMyData(data))
     }, [user.email, myData])
@@ -34,7 +34,7 @@ const Mytask = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://freelance-task-marketplace-server-tau.vercel.app/delete/${id}`, {
+                fetch(`http://localhost:3000/delete/${id}`, {
                     method: "DELETE"
                 }).then((res => res.json()))
                     .then((data) => {
@@ -52,36 +52,41 @@ const Mytask = () => {
     }
     return (
 
-        <>
+        <div className="px-4 sm:px-6 lg:px-10">
             <Fade>
-                <div className='py-10'>
-                    <h1 className='text-3xl font-bold text-center  '>My Task</h1>
-                    <p className='text-center font-semibold'><i>"Manage Your Tasks — Track, Edit, and Stay in Control."</i></p>
+                <div className="py-3 lg:py-10">
+                    <h1 className="text-3xl font-bold text-center">My Task</h1>
+                    <p className="text-center font-semibold italic">
+                        "Manage Your Tasks — Track, Edit, and Stay in Control."
+                    </p>
                 </div>
 
-                <table className='container mx-auto mb-10 rounded table-fixed shadow-lg'>
 
-                    <thead className='p-4'>
-                        <tr className='bg-primary  text-primary-content rounded'>
-                            <th className='py-3 border border-base-300 '>Title</th>
-                            <th className='py-3 border border-base-300 '>Category</th>
-                            <th className='py-3 border border-base-300 '>Budget</th>
-                            <th className='py-3 border border-base-300 '>Deadline</th>
-                            <th className='py-3 border border-base-300 '>Action</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {
-                            myData.map(singleData => <SingleTask handleDelete={handleDelete} key={setMyData._id} singleData={singleData} />)
-                        }
-
-                    </tbody>
-                </table>
+                <div className="overflow-x-auto mb-10 shadow-lg rounded-lg">
+                    <table className="min-w-full table-auto border border-base-300 text-sm md:text-base">
+                        <thead className="bg-primary text-primary-content">
+                            <tr>
+                                <th className="py-3 px-4 border border-base-300 text-left">Title</th>
+                                <th className="py-3 px-4 border border-base-300 text-left">Category</th>
+                                <th className="py-3 px-4 border border-base-300 text-left">Budget</th>
+                                <th className="py-3 px-4 border border-base-300 text-left">Deadline</th>
+                                <th className="py-3 px-4 border border-base-300 text-left">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {myData.map((singleData) => (
+                                <SingleTask
+                                    handleDelete={handleDelete}
+                                    key={singleData._id}
+                                    singleData={singleData}
+                                />
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </Fade>
+        </div>
 
-
-        </>
 
     );
 };
