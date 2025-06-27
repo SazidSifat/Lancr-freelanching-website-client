@@ -8,7 +8,7 @@ import { MdDashboard } from "react-icons/md";
 import { AuthContext } from '../../Context/AuthContext';
 
 const DashboardAside = () => {
-    const { user, signOutUser } = useContext(AuthContext)
+    const { signOutUser } = useContext(AuthContext)
 
     const handleSignOut = () => {
         signOutUser().then(() => {
