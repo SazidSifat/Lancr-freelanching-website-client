@@ -9,10 +9,10 @@ const FTask = ({ singleTask }) => {
 
         <Zoom cascade fraction={0.5}>
             <motion.div whileHover={{ scale: 1.05 }}
-                className='p-6 border border-base-300 rounded  bg-base-200 shadow-lg space-y-3'>
+                className='p-6 border border-base-300 rounded  bg-base-200 shadow-lg space-y-3 flex flex-col justify-between ' >
                 <div className='py-4 border-b border-base-300 space-y-3'>
                     <span className='text-base-content px-2 py-1 bg-base-200 rounded-lg '>{singleTask.category}</span>
-                    <h1 className='text-2xl text-base-content font-bold pt-2 hover:text-primary hover:underline'>{singleTask.title}</h1>
+                    <h1 className='text-2xl h-[100px] overflow-hidden text-base-content font-bold pt-2 hover:text-primary hover:underline'>{singleTask.title}</h1>
                     <p className='text-base-content font-bold'>Deadline: <span>{singleTask.deadline}</span></p>
                 </div>
                 <div className='flex items-center justify-between py-2'>

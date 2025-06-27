@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router';
 import FindTalent from '../../Components/Findtalentcard/FindTalent';
 import WhatClient from '../../Components/WhatClient/WhatClient';
 import Category from '../../Components/Category/Category';
+import Newsletter from '../../assets/Newsletter/Newsletter';
 
 const HomePage = () => {
 
@@ -21,6 +22,7 @@ const HomePage = () => {
             <FeatureTask featureData={featureData} />
             <FindTalent />
             <WhatClient />
+            <Newsletter/>
         </div>
     );
 };

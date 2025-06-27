@@ -1,12 +1,9 @@
-// src/pages/ContactPage.jsx
-import React, { useState } from "react";
-// import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
-  
 
-    return (
+
+  return (
     <div className="px-6 md:px-16 py-12  text-base-content min-h-[70vh]">
       <div className="max-w-3xl mx-auto text-center space-y-6">
         <h1 className="text-4xl font-bold text-primary">Contact Us</h1>
@@ -18,17 +15,17 @@ const Contact = () => {
       <div className="grid md:grid-cols-2 gap-10 mt-12 max-w-5xl mx-auto">
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <FaMapMarkerAlt className="text-2xl text-secondary" />
+            <FaMapMarkerAlt className="text-2xl text-primary" />
             <span>Dhaka, Bangladesh</span>
           </div>
           <div className="flex items-center gap-4">
-            <FaEnvelope className="text-2xl text-secondary" />
+            <FaEnvelope className="text-2xl text-primary" />
             <a href="mailto:support@freelancemarketplace.com" className="hover:underline">
               support@freelancemarketplace.com
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <FaPhone className="text-2xl text-secondary" />
+            <FaPhone className="text-2xl text-primary" />
             <span>+880 1234-567890</span>
           </div>
         </div>

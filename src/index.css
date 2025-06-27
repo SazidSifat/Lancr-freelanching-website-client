@@ -6,51 +6,35 @@
   name: "light";
   default: true;
 
-  /* Refined Light Palette */
+
   --color-primary: #1F6F65;
-  /* A pleasant forest green */
   --color-primary-content: #FFFFFF;
   --color-secondary: #FFC107;
-  /* A warm, inviting amber */
   --color-secondary-content: #212529;
-  /* Dark text for contrast */
   --color-accent: #17A2B8;
-  /* A bright, clear blue-green for highlights */
   --color-accent-content: #FFFFFF;
   --color-base-100: #FFFFFF;
   --color-base-200: #F8F9FA;
-  /* Off-white for subtle background */
   --color-base-300: #E9ECEF;
-  /* Light gray for borders/dividers */
   --color-base-content: #343A40;
-  /* Dark gray for main text */
+  
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
   default: false;
 
-  /* Refined Dark Palette (Adjusted) */
+  
   --color-primary: #1F6F65;
-  /* A muted, deep teal */
   --color-primary-content: #FFFFFF;
-  /* Deeper text for primary content */
   --color-secondary: #FFD700;
-  /* A slightly brighter gold for contrast on dark */
   --color-secondary-content: #1A1A1A;
-  /* Dark text for contrast */
   --color-accent: #20C997;
-  /* A vibrant, slightly lighter green for pop */
   --color-accent-content: #1A1A1A;
-  /* Dark text for contrast */
   --color-base-100: #1A1A1A;
-  /* Softer dark background */
   --color-base-200: #282828;
-  /* Softer dark background */
   --color-base-300: #3A3A3A;
-  /* Border color */
   --color-base-content: #E0E0E0;
-  /* Off-white for main text */
 }
 
 

@@ -22,9 +22,6 @@ const Theme = () => {
 
     }
 
-
-
-
     return (
         <div className='flex items-center justify-center cursor-pointer'>
             <button className='px-6 cursor-pointer' onClick={toggleTheme}>{theme === "light" ? <motion.div

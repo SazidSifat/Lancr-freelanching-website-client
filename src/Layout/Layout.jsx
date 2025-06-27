@@ -19,7 +19,7 @@ const Layout = () => {
     return (
         <>
             <ToastContainer />
-            <header className='border-b border-base-300 bg-base-200'>
+            <header className='sticky top-0 z-50'>
                 <Navbar />
             </header>
             <main className=''>
