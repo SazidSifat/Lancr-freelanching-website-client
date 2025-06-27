@@ -16,12 +16,12 @@ const Profile = () => {
     useEffect(() => {
         document.title = 'My task'
 
-        fetch(`http://localhost:3000/my-task/${user?.email}`)
+        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/my-task/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyData(data))
 
 
-        fetch(`http://localhost:3000/all-task`)
+        fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task`)
             .then(res => res.json())
             .then(data => setAllData(data))
 

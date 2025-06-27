@@ -54,7 +54,7 @@ const AddTask = () => {
 
 
         //for task
-        fetch("http://localhost:3000/addtask", {
+        fetch("https://freelance-task-marketplace-server-tau.vercel.app/addtask", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

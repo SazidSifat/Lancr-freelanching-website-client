@@ -23,7 +23,7 @@ const Dashboard = () => {
 
                 </div>
                 <div className='w-[80%]     bg-base-200' >
-                    <div className=' sticky py-3 lg:pr-64  top-0 z-50 bg-white'>
+                    <div className=' sticky py-3 lg:pr-64  top-0 z-50 bg-base-300'>
                         <MobileNav />
                     </div>
 

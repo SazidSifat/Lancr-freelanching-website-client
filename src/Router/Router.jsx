@@ -25,14 +25,14 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: HomePage,
-                loader: () => fetch('http://localhost:3000/feature-task'),
+                loader: () => fetch('https://freelance-task-marketplace-server-tau.vercel.app/feature-task'),
                 hydrateFallbackElement: <Loading />
             },
 
             {
                 path: '/browse-task',
                 element: <BrowseTask />,
-                loader: () => fetch("http://localhost:3000/all-task"),
+                loader: () => fetch("https://freelance-task-marketplace-server-tau.vercel.app/all-task"),
                 hydrateFallbackElement: <Loading />
             },
 
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/task-details/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
+                loader: ({ params }) => fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task/${params.id}`),
                 element: <PrivateRoute><TaskDetails /></PrivateRoute>,
                 hydrateFallbackElement: <Loading />
 
@@ -92,7 +92,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/update-task/:id',
                 element: <PrivateRoute><UpdateTask /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/all-task/${params.id}`),
+                loader: ({ params }) => fetch(`https://freelance-task-marketplace-server-tau.vercel.app/all-task/${params.id}`),
                 hydrateFallbackElement: <Loading />
 
 
